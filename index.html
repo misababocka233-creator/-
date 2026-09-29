@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mr. Dudec Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА З ОЧКАМИ ТА МОНЕТАМИ -->
+    <div class="top-bar">
+        <div class="score-box">
+            <span class="label">РАХУНОК:</span>
+            <span id="score">0</span>
+        </div>
+        <div class="coins-box">
+            <span class="label">МОНЕТИ:</span>
+            <span id="total-coins">0</span> 🪙
+        </div>
+    </div>
+
+    <!-- КНОПКИ МЕНЮ -->
+    <div class="menu-btns">
+        <button id="btn-skins" class="btn">МАГАЗИН</button>
+        <button id="btn-settings" class="btn">⚙️️ НАЛАШТУВАННЯ</button>
+    </div>
+
+    <!-- ОСНОВНА ІГРОВА ЗОНА -->
+    <div id="dudec-box" class="game-container">
+        <img id="dudec-img" src="du.png" alt="Mr. Dudec" draggable="false">
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО: МАГАЗИН ТА ССКІНИ -->
+    <div id="modal-skins" class="modal hidden">
+        <div class="modal-content">
+            <h2>МАГАЗИН ТА ОБРАНЕ</h2>
+
+            <label>ОБЕРИ СКІН ДУДЕЦЯ:</label>
+            <select id="select-skin" class="custom-select">
+                <option value="classic">Класичний</option>
+                <option value="gold" id="opt-skin-gold">Скін 2 (Золотий) - 100 🪙</option>
+                <option value="phonk" id="opt-skin-phonk">Скін 3 (Шрек) - 250 🪙</option>
+                <option value="pro" id="opt-skin-pro">pro (pro) - 1000 🪙</option>
+                <option value="skin_4" id="opt-skin-4">Скін 4 - 1500 🪙</option>
+                <option value="skin_5" id="opt-skin-5">Скін 5 - 2000 🪙</option>
+                <option value="skin_6" id="opt-skin-6">Скін 6 - 3000 🪙</option>
+            </select>
+
+            <label>ОБЕРИ ВИД СКЕЛЕТА (ФОН):</label>
+            <select id="select-skel" class="custom-select">
+                <option value="none">Без скелета</option>
+                <option value="skel_1" id="opt-skel-1">Скелет 1 - 500 🪙</option>
+                <option value="skel_2" id="opt-skel-2">Скелет 2 - 150 🪙</option>
+                <option value="skel_3" id="opt-skel-3">Скелет 3 - 500 🪙</option>
+                <option value="skel_4" id="opt-skel-4">Скелет 4 - 750 🪙</option>
+                <option value="skel_5" id="opt-skel-5">Скелет 5 - 1000 🪙</option>
+                <option value="skel_6" id="opt-skel-6">Скелет 6 - 1500 🪙</option>
+            </select>
+
+            <label>ОБЕРИ МУЗИКУ:</label>
+            <select id="select-music" class="custom-select">
+                <option value="dudec">Classic)                 </option>
+                <option value="das">Das Track (das.mp3)</option>
+                <option value="1doot">1Doot Special (1doot.mp3)</option>
+                <option value="music_4">Трек 4 </option>
+                <option value="music_5">Трек 5 </option>
+            </select>
+
+            <button id="save-skins" class="btn btn-primary">ЗБЕРЕГТИ ТА ЗАСТОСУВАТИ</button>
+            <button id="close-skins" class="btn btn-secondary">ЗАКРИТИ</button>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО: НАЛАШТУВАННЯ -->
+    <div id="modal-settings" class="modal hidden">
+        <div class="modal-content">
+            <h2>НАЛАШТУВАННЯ</h2>
+            <label for="volume-range">ГУЧНІСТЬ МУЗИКИ:</label>
+            <input type="range" id="volume-range" min="0" max="1" step="0.05" value="0.5">
+
+            <button id="save-settings" class="btn btn-primary">ЗБЕРЕГТИ</button>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО: GAME OVER -->
+    <div id="modal-gameover" class="modal hidden">
+        <div class="modal-content text-center">
+            <h2>GAME OVER!</h2>
+            <p>Твій рахунок за забіг: <strong id="final-score">0</strong></p>
+            <p>Зароблено монет: +<strong id="earned-coins">0</strong> 🪙</p>
+            <button id="restart-btn" class="btn btn-primary">знову </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
